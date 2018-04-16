@@ -1,4 +1,12 @@
- motors.rightMotor(50); // Turn CCW at motorPower of 100                                                    \\turns left
+#include <RedBot.h>
+
+RedBotMotors motors;
+
+void setup() {
+ 
+  delay (3000);
+ 
+motors.rightMotor(50); // Turn CCW at motorPower of 100                                                    \\turns left
  motors.leftMotor(50);  // Turn CCW at motorPower of 100
  delay(500);        // for 500 ms.    
  motors.brake();    // brake() motors
