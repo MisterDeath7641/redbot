@@ -45,7 +45,7 @@ motors.rightMotor(-140); // Turn CCW at motorPower of 100                       
 
 motors.rightMotor(145); // Turn CCW at motorPower of 100                                                    \\turns left
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(570);        // for 500 ms.    
+ delay(670);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
@@ -57,7 +57,7 @@ motors.rightMotor(-140); // Turn CCW at motorPower of 100                       
 
 motors.rightMotor(145); // Turn CCW at motorPower of 100                                                    \\turns left
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(570);        // for 500 ms.    
+ delay(670);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
