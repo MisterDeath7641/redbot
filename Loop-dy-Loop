@@ -5,7 +5,7 @@ RedBotMotors motors;
 void setup() {
 
 delay(2500);        // for 2500 ms.
-motors.rightMotor(-142); // Turn CCW at motorPower of 100                                                    \\turns foward
+motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns foward
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
  delay(2700);        // for 500 ms.    
  motors.brake();    // brake() motors
@@ -21,47 +21,47 @@ void loop() {
 
  motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns right
  motors.leftMotor(-150);  // Turn CCW at motorPower of 100
- delay(430);        // for 500 ms.    
+ delay(450);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
-motors.rightMotor(-142); // Turn CCW at motorPower of 100                                                    \\turns foward
+motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns foward
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(2700);        // for 500 ms.    
+ delay(1250);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
 motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns right
  motors.leftMotor(-150);  // Turn CCW at motorPower of 100
- delay(430);        // for 500 ms.    
+ delay(450);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
-motors.rightMotor(-142); // Turn CCW at motorPower of 100                                                    \\turns foward
+motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns foward
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
  delay(2700);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
-motors.rightMotor(-142); // Turn CCW at motorPower of 100                                                    \\turns left
+motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns left
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(2700);        // for 500 ms.    
+ delay(450);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
-motors.rightMotor(-142); // Turn CCW at motorPower of 100                                                    \\turns foward
+motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns foward
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(2700);        // for 500 ms.    
+ delay(1250);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
-motors.rightMotor(-142); // Turn CCW at motorPower of 100                                                    \\turns left
+motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns left
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(2700);        // for 500 ms.    
+ delay(450);        // for 500 ms.    
  motors.brake();    // brake() motors
  delay(1500);        // for 500 ms.
 
-motors.rightMotor(-142); // Turn CCW at motorPower of 100                                                    \\turns foward
+motors.rightMotor(-145); // Turn CCW at motorPower of 100                                                    \\turns foward
  motors.leftMotor(150);  // Turn CCW at motorPower of 100
  delay(2700);        // for 500 ms.    
  motors.brake();    // brake() motors
