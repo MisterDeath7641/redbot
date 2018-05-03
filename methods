@@ -1,0 +1,24 @@
+
+#include <RedBot.h>
+
+RedBotMotors motors;
+
+void setup()
+{
+
+serial.begin(1200);
+
+void movefoward (int =go+);
+
+{
+    {
+serial.print()
+
+motors.rightMotor(-140); // Turn CCW at motorPower of 100                                                    \\turns foward
+motors.leftMotor(150);  // Turn CCW at motorPower of 100
+delay(800);        // for 500 ms.    
+motors.brake();    // brake() motors
+delay(1500);        // for 500 ms.
+
+    }   }
+}
