@@ -1,151 +1,44 @@
 #include <RedBot.h>
-
 RedBotMotors motors;
+
+RedBotEncoder encoder = RedBotEncoder(A2, 10);  
+int buttonPin = 12;
+int countsPerRev = 192;   
+
+
+int lCount;
+int rCount;
 
 void setup()
 {
-
-Serial.begin(1200);
+  pinMode(buttonPin, INPUT_PULLUP);
+  Serial.begin(9600);
+  Serial.println("left    right");
+  Serial.println("================");
 }
 
-void moveback (int go)
-
-    {
-
-motors.rightMotor(143); // Turn CCW at motorPower of 100                                                    \\turns foward
-motors.leftMotor(-150);  // Turn CCW at motorPower of 100
-delay(1150*go);        // for 500 ms.    
-motors.brake();    // brake() motors
-delay(2500);        // for 500 ms.
-
-}
-
-void movefoward (int go)
-
-
+void loop(void)
 {
-motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                    \\turns foward
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1200*go);        // for 500 ms.    
-motors.brake();    // brake() motors
-delay(1500);        // for 500 ms.
-
-}
-
-
-void moveleft (int go)
-
-    {
-motors.rightMotor(-150); // Turn CCW at motorPower of 100                                                    \\turns left
- motors.leftMotor(-145);  // Turn CCW at motorPower of 100
- delay(639*go);        // for 500 ms.    
- motors.brake();    // brake() motors
- delay(1500);        // for 500 ms. 
-
-    }
-
-
-
-void moveright (int go)
-
-    {
-
-
-  motors.rightMotor(145); // Turn CCW at motorPower of 100                                                    \\turns right
- motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(610*go);        // for 500 ms.    
- motors.brake();    // brake() motors
- delay(1500);        // for 500 ms. 
-
-}
-
-void cclockwise (int go)
-
-    {
- motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go);
-motors.brake();    // brake() motors
-delay(1500);
-motors.rightMotor(-150); // Turn CCW at motorPower of 100                                                 
- motors.leftMotor(-145);  // Turn CCW at motorPower of 100
- delay(639*go);        // for 500 ms.    
- motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go); 
-motors.brake();    // brake() motors
-delay(1500);
-motors.rightMotor(-150); // Turn CCW at motorPower of 100                                                 
- motors.leftMotor(-145);  // Turn CCW at motorPower of 100
- delay(639*go);
-  motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go);
-motors.brake();    // brake() motors
-delay(1500);
-motors.rightMotor(-150); // Turn CCW at motorPower of 100                                                 
- motors.leftMotor(-145);  // Turn CCW at motorPower of 100
- delay(639*go);        // for 500 ms.    
- motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go);
-motors.brake();    // brake() motors
-delay(1500);
-    }
-
-
-
-void clockwise (int go)
-
-    {
-motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go);
-motors.brake();    // brake() motors
-delay(1500);
-  motors.rightMotor(145); // Turn CCW at motorPower of 100                                                    \\turns right
- motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(610*go);        // for 500 ms.    
-  motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go); 
-motors.brake();    // brake() motors
-delay(1500);
-motors.rightMotor(145); // Turn CCW at motorPower of 100                                                    \\turns right
- motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(610*go);        // for 500 ms.    
-  motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go);
-motors.brake();    // brake() motors
-delay(1500);
-motors.rightMotor(145); // Turn CCW at motorPower of 100                                                    \\turns right
- motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(610*go);        // for 500 ms.    
-  motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go); 
-motors.brake();    // brake() motors
-delay(1500);
-}
-
-
-void srturn (int go)
-
+  
+  if (digitalRead(buttonPin) == LOW)
   {
-    motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go);
-
-      motors.rightMotor(145); // Turn CCW at motorPower of 100                                                    \\turns right
- motors.leftMotor(150);  // Turn CCW at motorPower of 100
- delay(305*go);        // for 500 ms.
-
-motors.rightMotor(-143); // Turn CCW at motorPower of 100                                                  
-motors.leftMotor(150);  // Turn CCW at motorPower of 100
-delay(1300*go);
-
-motors.rightMotor(-150); // Turn CCW at motorPower of 100                                                 
- motors.leftMotor(-145);  // Turn CCW at motorPower of 100
- delay(319.5*go);        // for 500 ms.      
+    encoder.clearEnc(BOTH);  .
+    motors.drive(150);        
   }
+
+  .
+  lCount = encoder.getTicks(LEFT);     
+  rCount = encoder.getTicks(RIGHT);   
+
+  
+  Serial.print(lCount);
+  
+  Serial.print("\t");
+  Serial.println(rCount);
+
+  
+  if ((lCount >= 5*countsPerRev) || (rCount >= 5*countsPerRev) )
+  {
+    motors.brake();
+  }
+}
